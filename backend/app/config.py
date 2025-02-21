@@ -28,7 +28,7 @@ class Config:
     # OpenAI and other settings
     ALLOW_ORIGINS: str = os.getenv("ALLOW_ORIGINS", "*")
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY")
-    MODEL: str = os.getenv("MODEL", "gpt-4-0824")   
+    MODEL: str = os.getenv("MODEL", "gpt-4o-mini")   
     EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "text-embedding-3-large")
     EMBEDDING_DIMENSIONS: int = int(os.getenv("EMBEDDING_DIMENSIONS", 1024))
     REDIS_HOST: str = os.getenv("REDIS_HOST", "localhost")  

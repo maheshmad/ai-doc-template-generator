@@ -13,11 +13,13 @@ function TemplateEditor({ templateId }) {
       if (!templateId) return;
       
       setLoading(true);
+      setError(null);
+      
       try {
         const templateChunks = await templatesService.getTemplateChunks(templateId);
         setChunks(templateChunks);
       } catch (err) {
-        setError(err.message);
+        setError(err.message || 'Failed to load template');
       } finally {
         setLoading(false);
       }
@@ -54,42 +56,41 @@ function TemplateEditor({ templateId }) {
     );
   }
 
-  // Combine all chunk content preserving newlines
   const combinedContent = chunks
     .sort((a, b) => a.template_chunk_order - b.template_chunk_order)
-    .map(chunk => chunk.template_content.trim()) // Remove any leading/trailing whitespace
-    .filter(content => content) // Remove empty chunks
-    .join('\n\n'); // Add markdown horizontal rule between chunks with proper spacing
+    .map(chunk => chunk.template_content.trim())
+    .filter(content => content)
+    .join('\n\n');
 
   return (
     <div className="flex flex-col h-full">
       <h1 className="text-2xl font-bold mb-4">Template Content</h1>
       <div className="flex-1 overflow-y-auto p-4 bg-white rounded shadow">
         <div className="prose max-w-none whitespace-pre-wrap">
-          <ReactMarkdown 
-            remarkPlugins={[remarkGfm]}
-            components={{
-              h1: ({node, ...props}) => <h1 className="text-2xl font-bold my-4" {...props} />,
-              h2: ({node, ...props}) => <h2 className="text-xl font-bold my-3" {...props} />,
-              h3: ({node, ...props}) => <h3 className="text-lg font-bold my-2" {...props} />,
-              p: ({node, ...props}) => <p className="my-2" {...props} />,
-              ul: ({node, ...props}) => <ul className="list-disc ml-4 my-2" {...props} />,
-              ol: ({node, ...props}) => <ol className="list-decimal ml-4 my-2" {...props} />,
-              li: ({node, ...props}) => <li className="my-1" {...props} />,
-              a: ({node, ...props}) => <a className="text-blue-600 hover:underline" {...props} />,
-              blockquote: ({node, ...props}) => (
-                <blockquote className="border-l-4 border-gray-200 pl-4 my-2 italic" {...props} />
-              ),
-              code: ({node, inline, ...props}) => (
-                inline ? 
-                  <code className="bg-gray-100 rounded px-1" {...props} /> :
-                  <code className="block bg-gray-100 p-2 rounded my-2" {...props} />
-              ),
-              hr: ({node, ...props}) => <hr className="my-8 border-t-2 border-gray-200" {...props} />,
-            }}
-          >
-            {combinedContent}
-          </ReactMarkdown>
+              <ReactMarkdown 
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({node, ...props}) => <h1 className="text-2xl font-bold my-4" {...props} />,
+                  h2: ({node, ...props}) => <h2 className="text-xl font-bold my-3" {...props} />,
+                  h3: ({node, ...props}) => <h3 className="text-lg font-bold my-2" {...props} />,
+                  p: ({node, ...props}) => <p className="my-2" {...props} />,
+                  ul: ({node, ...props}) => <ul className="list-disc ml-4 my-2" {...props} />,
+                  ol: ({node, ...props}) => <ol className="list-decimal ml-4 my-2" {...props} />,
+                  li: ({node, ...props}) => <li className="my-1" {...props} />,
+                  a: ({node, ...props}) => <a className="text-blue-600 hover:underline" {...props} />,
+                  blockquote: ({node, ...props}) => (
+                    <blockquote className="border-l-4 border-gray-200 pl-4 my-2 italic" {...props} />
+                  ),
+                  code: ({node, inline, ...props}) => (
+                    inline ? 
+                      <code className="bg-gray-100 rounded px-1" {...props} /> :
+                      <code className="block bg-gray-100 p-2 rounded my-2" {...props} />
+                  ),
+                  hr: ({node, ...props}) => <hr className="my-8 border-t-2 border-gray-200" {...props} />,
+                }}
+              >
+                {combinedContent}
+              </ReactMarkdown>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ from rich.console import Console
 from backend.app.openaiutils import pydantic_function_tool
 from app.db import get_redis
 from backend.app.openaiutils import chat_stream
-from app.assistants.tools import QueryKnowledgeBaseTool
+from app.assistants.tools import QueryByTemplateIdTool, QueryKnowledgeBaseTool, SaveTemplateTool
 from app.assistants.prompts import MAIN_SYSTEM_PROMPT, RAG_SYSTEM_PROMPT
 
 class LocalRAGAssistant:
@@ -43,7 +43,9 @@ class LocalRAGAssistant:
                 system_message=self.main_system_message,
                 chat_messages=chat_messages,
                 tools=[
-                    pydantic_function_tool(QueryKnowledgeBaseTool)
+                    pydantic_function_tool(QueryKnowledgeBaseTool),
+                    pydantic_function_tool(QueryByTemplateIdTool),
+                    pydantic_function_tool(SaveTemplateTool)
                 ],
                 tool_choice='auto'
             )

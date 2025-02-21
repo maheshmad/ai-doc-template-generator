@@ -1,13 +1,15 @@
 import { useState } from 'react';
-import Chatbot from '@/components/Chatbot';
-import TemplateEditor from '@/components/TemplateEditor';
+import Splitter from './components/Splitter';
+import TemplatesMenu from './components/TemplatesMenu';
+import TemplateEditor from './components/TemplateEditor';
+import Chatbot from './components/Chatbot';
 import logo from '@/assets/images/logo.svg';
-import TemplatesMenu from '@/components/TemplatesMenu';
 
 function App() {
   const [selectedTemplateId, setSelectedTemplateId] = useState(null);
 
   const handleSelectTemplate = (templateId) => {
+    console.log('Template selected:', templateId); // Debug log
     setSelectedTemplateId(templateId);
   };
 
@@ -27,22 +29,26 @@ function App() {
       
       {/* Main Content */}
       <div className='flex flex-1 overflow-hidden'>
-        {/* Left Side Panel */}
-        <aside className='w-64 bg-gray-50 border-r border-gray-200 overflow-y-auto'>
+        {/* Left Side Panel with Templates */}
+        <aside className='w-64 bg-gray-50 border-r border-gray-200 overflow-y-auto flex-shrink-0'>
           <TemplatesMenu onSelectTemplate={handleSelectTemplate} />
         </aside>
 
-        {/* Main Content Area */}
-        <main className='flex flex-1 overflow-hidden'>
-          <section className='flex-1 overflow-auto'>
-            <TemplateEditor templateId={selectedTemplateId} />
-          </section>
-          
-          {/* Right Chat Panel */}
-          <aside className='w-80 border-l border-gray-200 overflow-hidden flex flex-col'>
-            <Chatbot />
-          </aside>
-        </main>
+        {/* Main Content Area with Splitter */}
+        <div className="flex-1 flex">
+          <Splitter
+            left={
+              <section className='h-full overflow-auto'>
+                <TemplateEditor templateId={selectedTemplateId} />
+              </section>
+            }
+            right={
+              <aside className='h-full border-l border-gray-200 overflow-hidden flex flex-col'>
+                <Chatbot />
+              </aside>
+            }                 
+          />
+        </div>
       </div>
     </div>
   );

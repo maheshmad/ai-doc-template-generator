@@ -49,22 +49,29 @@ function Chatbot() {
   }
 
   return (
-    <div className='relative grow flex flex-col gap-6 pt-6'>
-      {messages.length === 0 && (
-        <div className='mt-3 font-urbanist text-primary-blue text-xl font-light space-y-2'>
-          <p>👋 Welcome!</p>          
+    <div className="flex flex-col h-full w-full">
+      {messages.length === 0 ? (
+        <div className="flex-1 flex items-center justify-center p-4">
+          <div className="text-center text-gray-500">
+            <p className="text-xl mb-2">👋 Welcome!</p>
+            <p>Start a conversation about your template.</p>
+          </div>
         </div>
+      ) : (
+        <ChatMessages
+          messages={messages}
+          isLoading={isLoading}
+        />
       )}
-      <ChatMessages
-        messages={messages}
-        isLoading={isLoading}
-      />
-      <ChatInput
-        newMessage={newMessage}
-        isLoading={isLoading}
-        setNewMessage={setNewMessage}
-        submitNewMessage={submitNewMessage}
-      />
+      
+      <div className="flex-none w-full p-4 border-t border-gray-200 bg-white">
+        <ChatInput
+          newMessage={newMessage}
+          setNewMessage={setNewMessage}
+          submitNewMessage={submitNewMessage}
+          isLoading={isLoading}
+        />
+      </div>
     </div>
   );
 }

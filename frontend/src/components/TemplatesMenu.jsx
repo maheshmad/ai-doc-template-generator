@@ -8,11 +8,10 @@ const TreeNode = ({ label, children, level = 0, templateId, onSelectTemplate }) 
   const hasChildren = children && children.length > 0;
   
   const handleClick = () => {
-    console.log('templateId', templateId);
     if (hasChildren) {
       setIsExpanded(!isExpanded);
     } else if (templateId) {
-      console.log('templateId', templateId);
+      console.log('Selecting template:', templateId);
       onSelectTemplate(templateId);
     }
   };
@@ -41,9 +40,9 @@ const TreeNode = ({ label, children, level = 0, templateId, onSelectTemplate }) 
             <TreeNode 
               key={`${child.label}-${index}`}
               label={child.label}
+              templateId={child.templateId}
               children={child.children}
               level={level + 1}
-              templateId={child.template_id}
               onSelectTemplate={onSelectTemplate}
             />
           ))}
@@ -63,7 +62,6 @@ const TemplatesMenu = ({ onSelectTemplate }) => {
       try {
         const data = await templatesService.getTemplates();
         
-        // Organize templates by update date
         const organized = data.reduce((acc, template) => {
           const updateDate = parseISO(template.template_updated);
           const category = format(updateDate, 'MMM dd, yyyy');
@@ -75,14 +73,13 @@ const TemplatesMenu = ({ onSelectTemplate }) => {
           return acc;
         }, {});
 
-        // Convert to tree structure with sorted dates (newest first)
         const treeData = Object.entries(organized)
           .sort(([a], [b]) => parseISO(b).getTime() - parseISO(a).getTime())
           .map(([category, items]) => ({
             label: category,
             children: items.map(item => ({
               label: item.template_name,
-              template_id: item.template_id
+              templateId: item.template_id,
             }))
           }));
 
