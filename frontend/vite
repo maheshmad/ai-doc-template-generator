@@ -1,0 +1,923 @@
+
+
+Re-optimizing dependencies because lockfile has changed
+
+  VITE v5.4.14  ready in 36392 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#r
+  Why you should do it regularly: https://github.com/browserslist/update-db#r
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+10:24:45 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.
+10:24:45 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.
+10:24:45 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.css
+10:25:05 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.
+10:25:05 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.
+10:25:05 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.css (x2)
+10:28:54 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:28:54 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:28:54 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.css
+10:30:21 AM [vite] .env changed, restarting server...
+10:30:21 AM [vite] .env changed, restarting server... (x2)
+10:30:22 AM [vite] server restarted.
+10:30:23 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:30:23 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:30:23 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.css
+10:30:30 AM [vite] page reload src/config/config.js
+10:30:33 AM [vite] .env changed, restarting server...
+10:30:33 AM [vite] server restarted.
+10:30:37 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.j
+10:30:37 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.j
+10:30:37 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.jsx
+10:30:38 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.j
+10:30:38 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.j
+10:30:38 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.jsx (x2)
+10:35:09 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:35:09 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:35:09 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.css
+10:35:09 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:09 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:09 AM [vite] Internal server error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/src/components/TemplatesMenu.jsx:4:33
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@heroicons/react/24/outline";
+  20 |  import { templatesService } from "../services/templatesService";
+  21 |  import { format, parseISO } from "date-fns";
+     |                                    ^
+  22 |  const TreeNode = ({ label, children, level = 0 }) => {
+  23 |    _s();
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/c
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/c
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:62031:24)
+10:35:10 AM [vite] hmr update /src/index.css, /src/App.jsx
+10:35:10 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:10 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:10 AM [vite] Internal server error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/src/components/TemplatesMenu.jsx:4:33
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@heroicons/react/24/outline";
+  20 |  import { templatesService } from "../services/templatesService";
+  21 |  import { format, parseISO } from "date-fns";
+     |                                    ^
+  22 |  const TreeNode = ({ label, children, level = 0 }) => {
+  23 |    _s();
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+10:35:10 AM [vite] Pre-transform error: Failed to resolve import "date-fns" f
+10:35:10 AM [vite] Pre-transform error: Failed to resolve import "date-fns" f
+10:35:10 AM [vite] Pre-transform error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+10:35:11 AM [vite] hmr update /src/index.css, /src/App.jsx
+10:35:11 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:11 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:11 AM [vite] Internal server error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/src/components/TemplatesMenu.jsx:4:33
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@heroicons/react/24/outline";
+  20 |  import { templatesService } from "../services/templatesService";
+  21 |  import { format, parseISO } from "date-fns";
+     |                                    ^
+  22 |  const TreeNode = ({ label, children, level = 0 }) => {
+  23 |    _s();
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+10:35:11 AM [vite] Pre-transform error: Failed to resolve import "date-fns" f
+10:35:11 AM [vite] Pre-transform error: Failed to resolve import "date-fns" f
+10:35:11 AM [vite] Pre-transform error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+10:37:01 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:37:01 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:37:01 AM [vite] Internal server error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/src/components/TemplatesMenu.jsx:4:33
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@heroicons/react/24/outline";
+  20 |  import { templatesService } from "../services/templatesService";
+  21 |  import { format, parseISO } from "date-fns";
+     |                                    ^
+  22 |  const TreeNode = ({ label, children, level = 0 }) => {
+  23 |    _s();
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/c
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/c
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:62031:24)
+^Cmaheshmadhusudanan@mmadhusudanan frontend % npm run dev                 
+
+> tech-trends-chatbot-frontend@0.0.0 dev
+> vite
+
+
+Re-optimizing dependencies because lockfile has changed
+
+  VITE v5.4.14  ready in 36392 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#r
+  Why you should do it regularly: https://github.com/browserslist/update-db#r
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+10:24:45 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.
+10:24:45 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.
+10:24:45 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.css
+10:25:05 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.
+10:25:05 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.
+10:25:05 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.css (x2)
+10:28:54 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:28:54 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:28:54 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.css
+10:30:21 AM [vite] .env changed, restarting server...
+10:30:21 AM [vite] .env changed, restarting server... (x2)
+10:30:22 AM [vite] server restarted.
+10:30:23 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:30:23 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:30:23 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.css
+10:30:30 AM [vite] page reload src/config/config.js
+10:30:33 AM [vite] .env changed, restarting server...
+10:30:33 AM [vite] server restarted.
+10:30:37 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.j
+10:30:37 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.j
+10:30:37 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.jsx
+10:30:38 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.j
+10:30:38 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.j
+10:30:38 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.jsx (x2)
+10:35:09 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:35:09 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:35:09 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.css
+10:35:09 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:09 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:09 AM [vite] Internal server error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/src/components/TemplatesMenu.jsx:4:33
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@heroicons/react/24/outline";
+  20 |  import { templatesService } from "../services/templatesService";
+  21 |  import { format, parseISO } from "date-fns";
+     |                                    ^
+  22 |  const TreeNode = ({ label, children, level = 0 }) => {
+  23 |    _s();
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/c
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/c
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:62031:24)
+10:35:10 AM [vite] hmr update /src/index.css, /src/App.jsx
+10:35:10 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:10 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:10 AM [vite] Internal server error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/src/components/TemplatesMenu.jsx:4:33
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@heroicons/react/24/outline";
+  20 |  import { templatesService } from "../services/templatesService";
+  21 |  import { format, parseISO } from "date-fns";
+     |                                    ^
+  22 |  const TreeNode = ({ label, children, level = 0 }) => {
+  23 |    _s();
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+10:35:10 AM [vite] Pre-transform error: Failed to resolve import "date-fns" f
+10:35:10 AM [vite] Pre-transform error: Failed to resolve import "date-fns" f
+10:35:10 AM [vite] Pre-transform error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+10:35:11 AM [vite] hmr update /src/index.css, /src/App.jsx
+10:35:11 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:11 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:11 AM [vite] Internal server error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/src/components/TemplatesMenu.jsx:4:33
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@heroicons/react/24/outline";
+  20 |  import { templatesService } from "../services/templatesService";
+  21 |  import { format, parseISO } from "date-fns";
+     |                                    ^
+  22 |  const TreeNode = ({ label, children, level = 0 }) => {
+  23 |    _s();
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+10:35:11 AM [vite] Pre-transform error: Failed to resolve import "date-fns" f
+10:35:11 AM [vite] Pre-transform error: Failed to resolve import "date-fns" f
+10:35:11 AM [vite] Pre-transform error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+10:37:01 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:37:01 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:37:01 AM [vite] Internal server error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/src/components/TemplatesMenu.jsx:4:33
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@heroicons/react/24/outline";
+  20 |  import { templatesService } from "../services/templatesService";
+  21 |  import { format, parseISO } from "date-fns";
+     |                                    ^
+  22 |  const TreeNode = ({ label, children, level = 0 }) => {
+  23 |    _s();
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/c
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/c
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:62031:24)
+^Cmaheshmadhusudanan@mmadhusudanan frontend % npm run dev                 
+
+> tech-trends-chatbot-frontend@0.0.0 dev
+> vite
+
+
+Re-optimizing dependencies because lockfile has changed
+
+  VITE v5.4.14  ready in 36392 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#r
+  Why you should do it regularly: https://github.com/browserslist/update-db#r
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+10:24:45 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.
+10:24:45 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.
+10:24:45 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.css
+10:25:05 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.
+10:25:05 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.
+10:25:05 AM [vite] hmr update /src/components/TemplateEditor.jsx, /src/index.css (x2)
+10:28:54 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:28:54 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:28:54 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.css
+10:30:21 AM [vite] .env changed, restarting server...
+10:30:21 AM [vite] .env changed, restarting server... (x2)
+10:30:22 AM [vite] server restarted.
+10:30:23 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:30:23 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:30:23 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.css
+10:30:30 AM [vite] page reload src/config/config.js
+10:30:33 AM [vite] .env changed, restarting server...
+10:30:33 AM [vite] server restarted.
+10:30:37 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.j
+10:30:37 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.j
+10:30:37 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.jsx
+10:30:38 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.j
+10:30:38 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.j
+10:30:38 AM [vite] hmr update /src/index.css, /src/components/TemplatesMenu.jsx (x2)
+10:35:09 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:35:09 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.c
+10:35:09 AM [vite] hmr update /src/components/TemplatesMenu.jsx, /src/index.css
+10:35:09 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:09 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:09 AM [vite] Internal server error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/src/components/TemplatesMenu.jsx:4:33
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@heroicons/react/24/outline";
+  20 |  import { templatesService } from "../services/templatesService";
+  21 |  import { format, parseISO } from "date-fns";
+     |                                    ^
+  22 |  const TreeNode = ({ label, children, level = 0 }) => {
+  23 |    _s();
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/c
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/c
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:62031:24)
+10:35:10 AM [vite] hmr update /src/index.css, /src/App.jsx
+10:35:10 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:10 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:10 AM [vite] Internal server error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/src/components/TemplatesMenu.jsx:4:33
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@heroicons/react/24/outline";
+  20 |  import { templatesService } from "../services/templatesService";
+  21 |  import { format, parseISO } from "date-fns";
+     |                                    ^
+  22 |  const TreeNode = ({ label, children, level = 0 }) => {
+  23 |    _s();
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+10:35:10 AM [vite] Pre-transform error: Failed to resolve import "date-fns" f
+10:35:10 AM [vite] Pre-transform error: Failed to resolve import "date-fns" f
+10:35:10 AM [vite] Pre-transform error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+10:35:11 AM [vite] hmr update /src/index.css, /src/App.jsx
+10:35:11 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:11 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:35:11 AM [vite] Internal server error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/src/components/TemplatesMenu.jsx:4:33
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@heroicons/react/24/outline";
+  20 |  import { templatesService } from "../services/templatesService";
+  21 |  import { format, parseISO } from "date-fns";
+     |                                    ^
+  22 |  const TreeNode = ({ label, children, level = 0 }) => {
+  23 |    _s();
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+10:35:11 AM [vite] Pre-transform error: Failed to resolve import "date-fns" f
+10:35:11 AM [vite] Pre-transform error: Failed to resolve import "date-fns" f
+10:35:11 AM [vite] Pre-transform error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+10:37:01 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:37:01 AM [vite] Internal server error: Failed to resolve import "date-fns"
+10:37:01 AM [vite] Internal server error: Failed to resolve import "date-fns" from "src/components/TemplatesMenu.jsx". Does the file exist?
+  Plugin: vite:import-analysis
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/
+  File: /Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/src/components/TemplatesMenu.jsx:4:33
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@her
+  19 |  import { ChevronDownIcon, ChevronRightIcon, DocumentIcon } from "@heroicons/react/24/outline";
+  20 |  import { templatesService } from "../services/templatesService";
+  21 |  import { format, parseISO } from "date-fns";
+     |                                    ^
+  22 |  const TreeNode = ({ label, children, level = 0 }) => {
+  23 |    _s();
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudana
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/
+      at TransformPluginContext._formatError (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49257:41)
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Docum
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/ch
+      at TransformPluginContext.error (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49252:16)
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspac
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zb
+      at normalizeUrl (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64199:23)
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/templa
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:643
+      at async file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64331:39
+      at async Promise.all (index 6)
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusud
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/di
+      at async TransformPluginContext.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:64258:7)
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Do
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node
+      at async PluginContainer.transform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:49098:18)
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/m
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/d
+      at async loadAndTransform (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:51931:27)
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/c
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Docu
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/c
+      at async viteTransformMiddleware (file:///Users/maheshmadhusudanan/Documents/my-workspace/template-gen-engine/frontend/node_modules/vite/dist/node/chunks/dep-CHZK6zbr.js:62031:24)
