@@ -1,4 +1,4 @@
-from logging import log
+from logging import getLogger
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pathlib import Path
@@ -14,6 +14,9 @@ from uuid import uuid4
 from pymongo import UpdateOne
 
 templates_router = APIRouter()
+
+# Initialize logger
+logger = getLogger(__name__)
 
 class TemplateModel(BaseModel):
     template_id: str = Field(default_factory=lambda: str(uuid4()))
@@ -38,7 +41,7 @@ class Template:
     async def create(cls, template_data: TemplateModel) -> str:
         """Create a new template"""
         try:
-            log.info(f"Creating template: {template_data}")
+            logger.info(f"Creating template: {template_data}")
             # Ensure template_id and chunk_id are set
             if not template_data.template_id:
                 template_data.template_id = str(uuid4())

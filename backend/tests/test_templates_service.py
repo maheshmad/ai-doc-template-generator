@@ -6,14 +6,14 @@ import sys
 import asyncio
 from pathlib import Path
 from uuid import uuid4
+from app.templates_service import Template, TemplateModel, TemplateContentUpdate
+import logging
 
 # Load test environment variables
 load_dotenv(os.path.join(os.path.dirname(__file__), '.env.test'))
 
 # Import after environment is loaded
-from app.templates_service import Template, TemplateModel, TemplateContentUpdate
 from app.config import Config
-
 
 # Sample test data
 sample_template_chunks = [
@@ -157,6 +157,11 @@ async def template_db():
     
     # Teardown: Clear the templates collection
     await Template.collection.delete_many({})
+
+@pytest.fixture(autouse=True)
+def setup_logging():
+    logging.basicConfig(level=logging.INFO)
+    return logging.getLogger('templates_service')
 
 @pytest.mark.asyncio
 async def test_create_template(template_db):
