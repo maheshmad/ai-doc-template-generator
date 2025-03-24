@@ -9,7 +9,8 @@ class Config:
     
     # MongoDB settings
     MONGODB_URI: str = os.getenv("MONGODB_URI", "mongodb://localhost:27017")
-    MONGODB_DB_NAME: str = os.getenv("MONGODB_DB_NAME", "templates_db")
+    MONGODB_DB_NAME: str = os.getenv("MONGODB_DB_NAME", "templates_gen_db")
+    MONGODB_TEST_DB_NAME: str = os.getenv("MONGODB_TEST_DB_NAME", "templates_gen_db_test")
     
     # API settings
     API_VERSION: str = "v1"

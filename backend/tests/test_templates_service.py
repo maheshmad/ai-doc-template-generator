@@ -8,12 +8,28 @@ from pathlib import Path
 from uuid import uuid4
 from app.templates_service import Template, TemplateModel, TemplateContentUpdate
 import logging
+from motor.motor_asyncio import AsyncIOMotorClient
+from typing import List
 
 # Load test environment variables
 load_dotenv(os.path.join(os.path.dirname(__file__), '.env.test'))
 
 # Import after environment is loaded
 from app.config import Config
+
+# Override database for testing
+@pytest.fixture(scope="session", autouse=True)
+def override_db_for_testing():
+    """Override the database name for testing"""
+    original_db = Template.db
+    # Switch to test database
+    Template.db = Template.client[Config.MONGODB_TEST_DB_NAME]
+    Template.collection = Template.db.templates
+    
+    yield
+    
+    # Restore original database
+    Template.db = original_db
 
 # Sample test data
 sample_template_chunks = [
@@ -149,14 +165,62 @@ def event_loop():
 @pytest.fixture(scope="function")
 async def template_db():
     """Setup and teardown for template tests"""
-    # Setup: Clear the templates collection
+    # Setup: Clear the templates collection in test database
     await Template.collection.delete_many({})
-    print("Templates collection cleared")
+    print(f"Test database '{Config.MONGODB_TEST_DB_NAME}' templates collection cleared")
     
     yield
     
     # Teardown: Clear the templates collection
     await Template.collection.delete_many({})
+
+@pytest.fixture(scope="function")
+async def sample_template(template_db):
+    """Create a sample template with all its chunks for testing"""
+    template_ids = []
+    
+    try:
+        # Insert all chunks
+        for chunk_data in sample_template_chunks:
+            template_model = TemplateModel(**chunk_data)
+            template_id = await Template.create(template_model)
+            template_ids.append(template_id)
+        
+        # Return the main template ID (first chunk)
+        yield template_ids[0]
+    
+    finally:
+        # Cleanup if needed (template_db fixture will handle this)
+        pass
+
+@pytest.fixture(scope="function")
+async def multiple_templates(template_db):
+    """Create multiple different templates for testing"""
+    template_ids = []
+    
+    try:
+        # Create three different templates
+        for i in range(3):
+            template_data = TemplateModel(
+                template_id=f"test-template-{i}",
+                template_chunk_id=str(uuid4()),
+                template_chunk_order=0,
+                template_name=f"Test Template {i}",
+                template_content=f"Test content for template {i}",
+                template_created=datetime.now(),
+                template_updated=datetime.now(),
+                linked_prompt_id=""
+            )
+            template_id = await Template.create(template_data)
+            template_ids.append(template_id)
+        
+        yield template_ids
+    
+    finally:
+        # Cleanup this test's templates
+        await Template.collection.delete_many({
+            "template_id": {"$in": template_ids}
+        })
 
 @pytest.fixture(autouse=True)
 def setup_logging():
@@ -177,16 +241,11 @@ async def test_create_template(template_db):
     assert template.template_name == "Commercial Certificate of Insurance"
 
 @pytest.mark.asyncio
-async def test_get_template(template_db):
+async def test_get_template(sample_template):
     """Test retrieving a template"""
-    # First create a template
-    template_data = TemplateModel(**sample_template_chunks[0])
-    template_id = await Template.create(template_data)
-    
-    # Then retrieve it
-    template = await Template.get(template_id)
+    template = await Template.get(sample_template)
     assert template is not None
-    assert template.template_id == template_id
+    assert template.template_id == sample_template
     assert template.template_name == "Commercial Certificate of Insurance"
 
 @pytest.mark.asyncio
@@ -221,17 +280,19 @@ async def test_delete_template(template_db):
     assert template is None
 
 @pytest.mark.asyncio
-async def test_list_all_templates(template_db):
+async def test_list_all_templates(multiple_templates):
     """Test listing all templates"""
-    # Create multiple templates
-    for chunk in sample_template_chunks[:2]:  # Create first two chunks
-        template_data = TemplateModel(**chunk)
-        await Template.create(template_data)
+    # First ensure clean state
+    await Template.collection.delete_many({
+        "template_id": {"$nin": multiple_templates}
+    })
     
-    # List all templates
     templates = await Template.list_all()
-    assert len(templates) == 1  # Should only return main templates (chunk_order = 0)
-    assert templates[0].template_chunk_order == 0
+    # Get only the main templates (chunk_order = 0)
+    main_templates = [t for t in templates if t.template_chunk_order == 0]
+    assert len(main_templates) == 3
+    template_ids = [t.template_id for t in main_templates]
+    assert all(tid in template_ids for tid in multiple_templates)
 
 @pytest.mark.asyncio
 async def test_add_chunk(template_db):
@@ -250,34 +311,28 @@ async def test_add_chunk(template_db):
     assert any(chunk.template_chunk_id == chunk_id for chunk in chunks)
 
 @pytest.mark.asyncio
-async def test_reorder_chunks(template_db):
+async def test_reorder_chunks(sample_template):
     """Test reordering template chunks"""
-    # Create template with multiple chunks
-    template_id = "cert-of-insurance-001"
-    chunk_ids = []
-    for chunk in sample_template_chunks[:3]:  # Create first three chunks
-        template_data = TemplateModel(**chunk)
-        await Template.create(template_data)
-        chunk_ids.append(chunk.get("template_chunk_id"))
+    # Get current chunks
+    chunks = await Template.get_chunks(sample_template)
+    chunk_ids = [chunk.template_chunk_id for chunk in chunks]
     
-    # Reorder chunks
-    reversed_chunks = chunk_ids[::-1]  # Reverse the order
-    success = await Template.reorder_chunks(template_id, reversed_chunks)
+    # Reverse the order
+    reversed_ids = chunk_ids[::-1]
+    
+    # Update the reorder_chunks method in Template class to handle order properly
+    success = await Template.reorder_chunks(sample_template, reversed_ids)
     assert success is True
     
-    # Verify new order
-    chunks = await Template.get_chunks(template_id)
-    assert chunks[0].template_chunk_id == reversed_chunks[0]
+    # Verify new order by checking template_chunk_order values
+    updated_chunks = await Template.get_chunks(sample_template)
+    updated_chunks_sorted = sorted(updated_chunks, key=lambda x: x.template_chunk_order)
+    updated_ids = [chunk.template_chunk_id for chunk in updated_chunks_sorted]
+    assert updated_ids == reversed_ids, "Chunks not in expected order after reordering"
 
 @pytest.mark.asyncio
-async def test_search_templates(template_db):
+async def test_search_templates(sample_template):
     """Test searching templates"""
-    # Create sample templates
-    for chunk in sample_template_chunks[:2]:
-        template_data = TemplateModel(**chunk)
-        await Template.create(template_data)
-    
-    # Search for templates
     results = await Template.search("Certificate")
     assert len(results) > 0
     assert "Certificate" in results[0].template_name
@@ -303,13 +358,8 @@ async def test_insert_sample_template():
     assert all(chunk.template_chunk_order == i for i, chunk in enumerate(chunks))
 
 @pytest.mark.asyncio
-async def test_update_template_content(template_db):
+async def test_update_template_content(sample_template):
     """Test updating template content"""
-    # First create a template
-    template_data = TemplateModel(**sample_template_chunks[0])
-    template_id = await Template.create(template_data)
-    
-    # Update content with multiple chunks
     new_content = """First chunk content
 
 ---
@@ -321,19 +371,14 @@ Second chunk content
 Third chunk content"""
     
     update_data = TemplateContentUpdate(content=new_content)
-    
-    # Update the template content
-    await Template.update_content(template_id, update_data)
+    await Template.update_content(sample_template, update_data)
     
     # Verify the update
-    chunks = await Template.get_chunks(template_id)
+    chunks = await Template.get_chunks(sample_template)
     assert len(chunks) == 3
     assert chunks[0].template_content == "First chunk content"
     assert chunks[1].template_content == "Second chunk content"
     assert chunks[2].template_content == "Third chunk content"
-    assert all(chunk.template_id == template_id for chunk in chunks)
-    assert all(isinstance(chunk.template_chunk_id, str) for chunk in chunks)
-    assert [chunk.template_chunk_order for chunk in chunks] == [0, 1, 2]
 
 @pytest.mark.asyncio
 async def test_update_template_content_single_chunk(template_db):

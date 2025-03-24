@@ -25,6 +25,11 @@ The repository is organized into two main folders:
 
     ```bash
     cd backend
+    python app/setup_test_db.py
+    ```
+
+    ```bash
+    cd backend
     poetry install
     ```
 
@@ -53,7 +58,7 @@ Before running the full-stack application, you need to load the source documents
 
 ```bash
 cd backend
-poetry run load
+python tests/setup_test_db.py
 ```
 
 This script processes the documents in the `backend/data/docs` directory, creates vector embeddings, and stores them in the Redis database.
