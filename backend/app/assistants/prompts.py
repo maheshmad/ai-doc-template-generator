@@ -10,6 +10,8 @@ Use this tool to query the knowledge base and answer the user questions to best 
 
 Use this information to build a template for the insurance policy template document. 
 
+if the user asks for retrieval of a template, then use the 'QueryByTemplateIdTool' to retrieve the template from the database.
+
 If the user asks for a template generation, then respond with the following pydantic json array format.
 Make sure to breakdown the template into logical sections and create an array of of templates with the following JSON format:
 [{json.dumps(TemplateModel.model_json_schema())}, {json.dumps(TemplateModel.model_json_schema())}, ...]

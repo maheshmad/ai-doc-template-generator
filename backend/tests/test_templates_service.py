@@ -5,12 +5,13 @@ import os
 import sys
 import asyncio
 from pathlib import Path
+from uuid import uuid4
 
 # Load test environment variables
 load_dotenv(os.path.join(os.path.dirname(__file__), '.env.test'))
 
 # Import after environment is loaded
-from app.templates_service import Template, TemplateModel
+from app.templates_service import Template, TemplateModel, TemplateContentUpdate
 from app.config import Config
 
 
@@ -294,4 +295,114 @@ async def test_insert_sample_template():
     assert len(chunks) == len(sample_template_chunks)
     
     # Verify chunk order
-    assert all(chunk.template_chunk_order == i for i, chunk in enumerate(chunks)) 
+    assert all(chunk.template_chunk_order == i for i, chunk in enumerate(chunks))
+
+@pytest.mark.asyncio
+async def test_update_template_content(template_db):
+    """Test updating template content"""
+    # First create a template
+    template_data = TemplateModel(**sample_template_chunks[0])
+    template_id = await Template.create(template_data)
+    
+    # Update content with multiple chunks
+    new_content = """First chunk content
+
+---
+
+Second chunk content
+
+---
+
+Third chunk content"""
+    
+    update_data = TemplateContentUpdate(content=new_content)
+    
+    # Update the template content
+    await Template.update_content(template_id, update_data)
+    
+    # Verify the update
+    chunks = await Template.get_chunks(template_id)
+    assert len(chunks) == 3
+    assert chunks[0].template_content == "First chunk content"
+    assert chunks[1].template_content == "Second chunk content"
+    assert chunks[2].template_content == "Third chunk content"
+    assert all(chunk.template_id == template_id for chunk in chunks)
+    assert all(isinstance(chunk.template_chunk_id, str) for chunk in chunks)
+    assert [chunk.template_chunk_order for chunk in chunks] == [0, 1, 2]
+
+@pytest.mark.asyncio
+async def test_update_template_content_single_chunk(template_db):
+    """Test updating template content with a single chunk"""
+    # First create a template
+    template_data = TemplateModel(**sample_template_chunks[0])
+    template_id = await Template.create(template_data)
+    
+    # Update content with single chunk
+    new_content = "Single chunk content"
+    update_data = TemplateContentUpdate(content=new_content)
+    
+    # Update the template content
+    await Template.update_content(template_id, update_data)
+    
+    # Verify the update
+    chunks = await Template.get_chunks(template_id)
+    assert len(chunks) == 1
+    assert chunks[0].template_content == "Single chunk content"
+    assert chunks[0].template_chunk_order == 0
+
+@pytest.mark.asyncio
+async def test_update_template_content_empty(template_db):
+    """Test updating template content with empty content"""
+    # First create a template
+    template_data = TemplateModel(**sample_template_chunks[0])
+    template_id = await Template.create(template_data)
+    
+    # Update with empty content
+    update_data = TemplateContentUpdate(content="")
+    
+    # Update should create a template with empty content
+    await Template.update_content(template_id, update_data)
+    
+    # Verify the update
+    chunks = await Template.get_chunks(template_id)
+    assert len(chunks) == 1
+    assert chunks[0].template_content == ""
+    assert chunks[0].template_chunk_order == 0
+
+@pytest.mark.asyncio
+async def test_update_template_content_invalid_id(template_db):
+    """Test updating template content with invalid template ID"""
+    invalid_id = str(uuid4())
+    update_data = TemplateContentUpdate(content="Test content")
+    
+    # Should raise an exception
+    with pytest.raises(Exception):
+        await Template.update_content(invalid_id, update_data)
+
+@pytest.mark.asyncio
+async def test_update_template_content_preserve_metadata(template_db):
+    """Test that updating content preserves template metadata"""
+    # First create a template with metadata
+    template_data = TemplateModel(
+        template_id="test-template",
+        template_chunk_id=str(uuid4()),
+        template_chunk_order=0,
+        template_name="Test Template",
+        template_content="Original content",
+        template_created=datetime.now(),
+        template_updated=datetime.now(),
+        linked_prompt_id="test-prompt"
+    )
+    template_id = await Template.create(template_data)
+    
+    # Update content
+    new_content = "Updated content"
+    update_data = TemplateContentUpdate(content=new_content)
+    await Template.update_content(template_id, update_data)
+    
+    # Verify metadata is preserved
+    chunks = await Template.get_chunks(template_id)
+    assert len(chunks) == 1
+    assert chunks[0].template_name == "Test Template"
+    assert chunks[0].linked_prompt_id == "test-prompt"
+    assert chunks[0].template_content == "Updated content" 

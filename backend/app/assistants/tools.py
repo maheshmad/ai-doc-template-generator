@@ -3,6 +3,7 @@ from pydantic import BaseModel, Field
 from app.db import search_vector_db
 from app.openaiutils import get_embedding
 from app.templates_service import Template, TemplateModel
+from logging import log
 
 class QueryKnowledgeBaseTool(BaseModel):
     """Query the knowledge base to answer user questions"""
@@ -19,13 +20,15 @@ class QueryByTemplateIdTool(BaseModel):
     query_input: str = Field(description='the template id to be retrieved')
 
     async def __call__(self):
+        log.info(f"Querying template: {self.query_input}")
         templates = await Template.get_chunks(self.query_input)
         return templates
 
 class SaveTemplateTool(BaseModel):
     """This tool saves the template to the database"""
-    template: List[TemplateModel]
+    templates: List[TemplateModel]
 
     async def __call__(self):
-        templates = await Template.create_many(self.template)
-        return "Successfully saved the template"
+        print(f"Saving templates: {self.templates}")
+        templates = await Template.create_many(self.templates)       
+        return "Successfully saved the templates"

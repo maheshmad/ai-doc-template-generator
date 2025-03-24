@@ -1,3 +1,4 @@
+from logging import log
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pathlib import Path
@@ -12,7 +13,7 @@ from datetime import datetime
 from uuid import uuid4
 from pymongo import UpdateOne
 
-router = APIRouter()
+templates_router = APIRouter()
 
 class TemplateModel(BaseModel):
     template_id: str = Field(default_factory=lambda: str(uuid4()))
@@ -24,6 +25,9 @@ class TemplateModel(BaseModel):
     template_updated: datetime = Field(default_factory=datetime.now)
     linked_prompt_id: str = Field(default="")
 
+class TemplateContentUpdate(BaseModel):
+    content: str
+
 class Template:
     # Initialize MongoDB connection
     client = AsyncIOMotorClient(Config.MONGODB_URI)
@@ -34,6 +38,7 @@ class Template:
     async def create(cls, template_data: TemplateModel) -> str:
         """Create a new template"""
         try:
+            log.info(f"Creating template: {template_data}")
             # Ensure template_id and chunk_id are set
             if not template_data.template_id:
                 template_data.template_id = str(uuid4())
@@ -178,7 +183,49 @@ class Template:
         except Exception as e:
             raise Exception(f"Error searching templates: {str(e)}")
 
-@router.post("/api/templates")
+    @classmethod
+    async def update_content(cls, template_id: str, update_data: TemplateContentUpdate):
+        """Update template content and manage chunks"""
+        # Get existing template to preserve metadata
+        existing = await cls.get(template_id)
+        if not existing:
+            raise ValueError(f"Template with ID {template_id} not found")
+            
+        chunks = update_data.content.split('\n\n---\n\n')
+        
+        # Delete existing chunks
+        await cls.delete(template_id)
+        
+        # Create new main template with first chunk
+        main_template = TemplateModel(
+            template_id=template_id,
+            template_chunk_id=str(uuid4()),
+            template_chunk_order=0,
+            template_name=existing.template_name,
+            template_content=chunks[0],
+            template_created=existing.template_created,
+            template_updated=datetime.now(),
+            linked_prompt_id=existing.linked_prompt_id
+        )
+        await cls.create(main_template)
+        
+        # Add additional chunks if any
+        for i, chunk_content in enumerate(chunks[1:], 1):
+            chunk = TemplateModel(
+                template_id=template_id,
+                template_chunk_id=str(uuid4()),
+                template_chunk_order=i,
+                template_name=existing.template_name,
+                template_content=chunk_content,
+                template_created=existing.template_created,
+                template_updated=datetime.now(),
+                linked_prompt_id=existing.linked_prompt_id
+            )
+            await cls.create(chunk)
+            
+        return True
+
+@templates_router.post("/api/templates")
 async def create_template(template_data: TemplateModel):
     """Create a new template"""
     try:
@@ -187,7 +234,7 @@ async def create_template(template_data: TemplateModel):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.get("/api/templates")
+@templates_router.get("/api/templates")
 async def list_templates():
     """Get all templates (main templates only, not chunks)"""
     try:
@@ -196,7 +243,7 @@ async def list_templates():
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.get("/api/templates/{template_id}")
+@templates_router.get("/api/templates/{template_id}")
 async def get_template(template_id: str):
     """Get a specific template by ID"""
     try:
@@ -209,7 +256,7 @@ async def get_template(template_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.put("/api/templates/{template_id}")
+@templates_router.put("/api/templates/{template_id}")
 async def update_template(template_id: str, template_data: TemplateModel):
     """Update a template"""
     try:
@@ -222,7 +269,7 @@ async def update_template(template_id: str, template_data: TemplateModel):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.delete("/api/templates/{template_id}")
+@templates_router.delete("/api/templates/{template_id}")
 async def delete_template(template_id: str):
     """Delete a template and all its chunks"""
     try:
@@ -233,7 +280,7 @@ async def delete_template(template_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.get("/api/templates/{template_id}/chunks")
+@templates_router.get("/api/templates/{template_id}/chunks")
 async def get_template_chunks(template_id: str):
     """Get all chunks for a template"""
     try:
@@ -242,7 +289,7 @@ async def get_template_chunks(template_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.post("/api/templates/{template_id}/chunks")
+@templates_router.post("/api/templates/{template_id}/chunks")
 async def add_template_chunk(template_id: str, content: str):
     """Add a new chunk to a template"""
     try:
@@ -251,7 +298,7 @@ async def add_template_chunk(template_id: str, content: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.delete("/api/templates/{template_id}/chunks/{chunk_id}")
+@templates_router.delete("/api/templates/{template_id}/chunks/{chunk_id}")
 async def delete_template_chunk(template_id: str, chunk_id: str):
     """Delete a specific chunk from a template"""
     try:
@@ -262,7 +309,7 @@ async def delete_template_chunk(template_id: str, chunk_id: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.put("/api/templates/{template_id}/chunks/reorder")
+@templates_router.put("/api/templates/{template_id}/chunks/reorder")
 async def reorder_template_chunks(
     template_id: str, 
     chunk_order: List[str]
@@ -276,11 +323,51 @@ async def reorder_template_chunks(
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.get("/api/templates/search")
+@templates_router.get("/api/templates/search")
 async def search_templates(query: str):
     """Search templates by name or content"""
     try:
         templates = await Template.search(query)
         return templates
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e)) 
+
+@templates_router.put("/api/templates/{template_id}/content")
+async def update_template_content(
+    template_id: str, 
+    update_data: TemplateContentUpdate
+):
+    """Update the content of a template and its chunks"""
+    try:
+        # Use update_data.content instead of raw content
+        chunks = update_data.content.split('\n\n---\n\n')
+        
+        # Delete existing chunks
+        await Template.delete(template_id)
+        
+        # Create new main template with first chunk
+        main_template = TemplateModel(
+            template_id=template_id,
+            template_chunk_id=str(uuid4()),
+            template_chunk_order=0,
+            template_name="", # Maintain existing name
+            template_content=chunks[0],
+            template_updated=datetime.now()
+        )
+        await Template.create(main_template)
+        
+        # Add additional chunks if any
+        for i, chunk_content in enumerate(chunks[1:], 1):
+            chunk = TemplateModel(
+                template_id=template_id,
+                template_chunk_id=str(uuid4()),
+                template_chunk_order=i,
+                template_name="",
+                template_content=chunk_content,
+                template_updated=datetime.now()
+            )
+            await Template.create(chunk)
+            
+        return {"success": True}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e)) 

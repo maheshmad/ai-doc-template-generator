@@ -9,11 +9,10 @@ function Chatbot() {
   const [chatId, setChatId] = useState(null);
   const [messages, setMessages] = useImmer([]);
   const [newMessage, setNewMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const isLoading = messages.length && messages[messages.length - 1].loading;
-
-  async function submitNewMessage() {
-    const trimmedMessage = newMessage.trim();
+  const submitNewMessage = async (message) => {
+    const trimmedMessage = message.trim();
     if (!trimmedMessage || isLoading) return;
 
     setMessages(draft => [...draft,
@@ -46,25 +45,27 @@ function Chatbot() {
         draft[draft.length - 1].error = true;
       });
     }
-  }
+  };
 
   return (
-    <div className="flex flex-col h-full w-full">
-      {messages.length === 0 ? (
-        <div className="flex-1 flex items-center justify-center p-4">
-          <div className="text-center text-gray-500">
-            <p className="text-xl mb-2">👋 Welcome!</p>
-            <p>Start a conversation about your template.</p>
+    <div className="flex flex-col h-full w-full bg-white">
+      <div className="flex-1 min-h-0">
+        {messages.length === 0 ? (
+          <div className="h-full flex items-center justify-center p-4">
+            <div className="text-center text-gray-500">
+              <p className="text-xl mb-2">👋 Welcome!</p>
+              <p>Start a conversation about your template.</p>
+            </div>
           </div>
-        </div>
-      ) : (
-        <ChatMessages
-          messages={messages}
-          isLoading={isLoading}
-        />
-      )}
+        ) : (
+          <ChatMessages
+            messages={messages}
+            isLoading={isLoading}
+          />
+        )}
+      </div>
       
-      <div className="flex-none w-full p-4 border-t border-gray-200 bg-white">
+      <div className="flex-none w-full border-t border-gray-200 bg-white">
         <ChatInput
           newMessage={newMessage}
           setNewMessage={setNewMessage}
